@@ -8,3 +8,5 @@ class Course(models.Model):
 
     title = fields.Char(required=True)
     description = fields.Text()
+    responsible_id = fields.Many2one(comodel_name='res.users')
+    session_ids = fields.One2many(string='Sessions', comodel_name='session', inverse_name='course_id')
