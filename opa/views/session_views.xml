@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="session_tree_view" model="ir.ui.view">
+        <field name="name">session.tree.view</field>
+        <field name="model">session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="course_id"/>
+                <field name="starts_on"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="session_form_view" model="ir.ui.view">
+        <field name="name">session.form.view</field>
+        <field name="model">session</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="title"/>
+                    <group>
+                        <group>
+                            <field name="starts_on"/>
+                            <field name="duration"/>
+                        </group>
+                        <group>
+                            <field name="course_id"/>
+                            <field name="instructor_id"/>
+                            <field name="seats"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Attendees">
+                            <field name="attendee_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_list_session" model="ir.actions.act_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

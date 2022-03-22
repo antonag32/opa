@@ -2,5 +2,6 @@
 <odoo>
     <menuitem name="Open Academy" id="menu_main" sequence="65">
         <menuitem name="Courses" id="menu_courses" action="action_list_course"/>
+        <menuitem name="Sessions" id="menu_sessions" action="action_list_session"/>
     </menuitem>
 </odoo>

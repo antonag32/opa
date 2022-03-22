@@ -8,7 +8,8 @@
     'depends': ['base'],
     'data': [
         'views/course_views.xml',
-        'views/ir_ui_menu.xml',
+        'views/session_views.xml',
+        'views/ir_ui_menu.xml'
     ],
     'demo': ['demo/course_demo.xml'],
     'application': True,
