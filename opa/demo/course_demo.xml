@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="course_1_demo" model="course">
+        <field name="title">How to program Odoo</field>
+        <field name="description">Join to learn how to create awesome modules like (supposedly) this one.</field>
+    </record>
+    <record id="course_2_demo" model="course">
+        <field name="title">How to teach your cat the meaning of life</field>
+        <field name="description">Teach your cat the wonders of life.</field>
+    </record>
+</odoo>
