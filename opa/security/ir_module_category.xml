@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="module_opa_category" model="ir.module.category">
+        <field name="name">Open Academy</field>
+        <field name="description">Helps you manage all your courses</field>
+    </record>
+</odoo>
