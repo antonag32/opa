@@ -9,6 +9,7 @@ class Session(models.Model):
 
     title = fields.Char(required=True)
     starts_on = fields.Date(required=True)
+    ends_on = fields.Date(default=fields.Date.context_today)
     duration = fields.Float(string='Duration (hours)')
     seats = fields.Integer()
     course_id = fields.Many2one(comodel_name='course', required=True)
@@ -27,8 +28,14 @@ class Session(models.Model):
         column1='session_id',
         column2='res_partner_id'
     )
+    attendee_count = fields.Integer(compute='_compute_attendee_count', store=True)
     taken_seats = fields.Float(string='Taken Seats (%)', compute='_compute_taken_seats')
     active = fields.Boolean(default=True)
+
+    @api.depends('attendee_ids')
+    def _compute_attendee_count(self):
+        for record in self:
+            record.attendee_count = len(record.attendee_ids)
 
     @api.depends('attendee_ids', 'seats')
     def _compute_taken_seats(self):
