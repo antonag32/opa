@@ -11,5 +11,18 @@ class Session(models.Model):
     duration = fields.Float(string='Duration (hours)')
     seats = fields.Integer()
     course_id = fields.Many2one(comodel_name='course', required=True)
-    instructor_id = fields.Many2one(comodel_name='res.partner')
-    attendee_ids = fields.Many2many(string='Attendees', comodel_name='res.partner')
+    instructor_id = fields.Many2one(
+        comodel_name='res.partner',
+        domain=[
+            '|',
+            ('instructor', '=', True),
+            ('category_id.parent_id.name', '=', 'Teacher')
+        ]
+    )
+    attendee_ids = fields.Many2many(
+        string='Attendees',
+        comodel_name='res.partner',
+        relation='session_res_partner_rel',
+        column1='session_id',
+        column2='res_partner_id'
+    )

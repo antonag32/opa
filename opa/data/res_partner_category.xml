@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="teacher_category" model="res.partner.category">
+        <field name="name">Teacher</field>
+        <field name="color" eval="5"/>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="teacher_lvl1_category" model="res.partner.category">
+        <field name="name">Level 1</field>
+        <field name="color" eval="7"/>
+        <field name="active" eval="True"/>
+        <field name="parent_id" ref="teacher_category"/>
+    </record>
+
+    <record id="teacher_lvl2_category" model="res.partner.category">
+        <field name="name">Level 2</field>
+        <field name="color" eval="6"/>
+        <field name="active" eval="True"/>
+        <field name="parent_id" ref="teacher_category"/>
+    </record>
+</odoo>
