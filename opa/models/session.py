@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class Session(models.Model):
@@ -36,3 +36,26 @@ class Session(models.Model):
                 record.taken_seats = round((100 / record.seats) * len(record.attendee_ids), 2)
             else:
                 record.taken_seats = 0
+
+    @api.onchange('seats')
+    def _onchange_seats(self):
+        if self.seats < 0:
+            return {
+                'warning': {
+                    'title': _('Invalid number of seats'),
+                    'message': _("Negative seats don't exist!")
+                }
+            }
+
+    @api.onchange('attendee_ids', 'seats')
+    def _onchange_attendee_ids(self):
+        if len(self.attendee_ids) > self.seats:
+            return {
+                'warning': {
+                    'title': _('Not enough seats!'),
+                    'message': _("You can't have more attendees (%d) than seats (%d).") % (
+                        len(self.attendee_ids),
+                        self.seats
+                    )
+                }
+            }
