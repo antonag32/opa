@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">opa.res.partner.inherit.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='title']" position="after">
+                <field name="instructor"/>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page name="sessions" string="Sessions">
+                    <field name="session_ids">
+                        <tree>
+                            <field name="title"/>
+                            <field name="course_id"/>
+                            <field name="starts_on"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
