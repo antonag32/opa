@@ -8,6 +8,7 @@
                 <field name="title"/>
                 <field name="course_id"/>
                 <field name="starts_on"/>
+                <field name="taken_seats"/>
             </tree>
         </field>
     </record>
@@ -17,12 +18,16 @@
         <field name="model">session</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="taken_seats" widget="progressbar"/>
+                </header>
                 <sheet>
                     <field name="title"/>
                     <group>
                         <group>
                             <field name="starts_on"/>
                             <field name="duration"/>
+                            <field name="active"/>
                         </group>
                         <group>
                             <field name="course_id"/>
