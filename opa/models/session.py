@@ -1,4 +1,5 @@
 from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class Session(models.Model):
@@ -59,3 +60,9 @@ class Session(models.Model):
                     )
                 }
             }
+
+    @api.constrains('attendee_ids', 'instructor_id')
+    def _check_instructor_id(self):
+        for record in self:
+            if record.instructor_id in record.attendee_ids:
+                raise ValidationError(_("The instructor can't be an attendee"))
