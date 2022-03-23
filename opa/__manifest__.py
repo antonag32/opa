@@ -7,6 +7,11 @@
     'version': '15.0.1.0.0',
     'depends': ['base'],
     'data': [
+        'security/ir_module_category.xml',
+        'security/res_groups.xml',
+        'security/ir.model.access.csv',
+        'security/ir_rule.xml',
+        'data/res_users.xml',
         'views/course_views.xml',
         'views/session_views.xml',
         'views/ir_ui_menu.xml'
