@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class Session(models.Model):
@@ -26,3 +26,13 @@ class Session(models.Model):
         column1='session_id',
         column2='res_partner_id'
     )
+    taken_seats = fields.Float(string='Taken Seats (%)', compute='_compute_taken_seats')
+    active = fields.Boolean(default=True)
+
+    @api.depends('attendee_ids', 'seats')
+    def _compute_taken_seats(self):
+        for record in self:
+            if record.seats > 0:
+                record.taken_seats = round((100 / record.seats) * len(record.attendee_ids), 2)
+            else:
+                record.taken_seats = 0
