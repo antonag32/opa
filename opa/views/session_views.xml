@@ -4,12 +4,85 @@
         <field name="name">session.tree.view</field>
         <field name="model">session</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree class="text-center" decoration-info="duration &lt; 120" decoration-danger="duration &gt; 360">
                 <field name="title"/>
                 <field name="course_id"/>
                 <field name="starts_on"/>
+                <field name="duration"/>
                 <field name="taken_seats"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="session_calendar_view" model="ir.ui.view">
+        <field name="name">session.calendar.view</field>
+        <field name="model">session</field>
+        <field name="arch" type="xml">
+            <calendar string="Sessions" date_start="starts_on">
+                <field name="title"/>
+                <field name="course_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="session_gantt_view" model="ir.ui.view">
+        <field name="name">session.gantt.view</field>
+        <field name="model">session</field>
+        <field name="arch" type="xml">
+            <gantt string="Sessions" date_start="starts_on" date_stop="ends_on"/>
+        </field>
+    </record>
+
+    <record id="session_graph_view" model="ir.ui.view">
+        <field name="name">session.graph.view</field>
+        <field name="model">session</field>
+        <field name="arch" type="xml">
+            <graph string="Attendees by Session" type="line">
+                <field name="course_id"/>
+                <field name="attendee_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="session_kanban_view" model="ir.ui.view">
+        <field name="name">session.kanban.view</field>
+        <field name="model">session</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="course_id">
+                <field name="title"/>
+                <field name="course_id"/>
+                <field name="starts_on"/>
+                <field name="duration"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                            <div>
+                                <strong class="o_kanban_record_title">
+                                    <field name="title"/>
+                                </strong>
+                            </div>
+                            <div>
+                                <span class="o_kanban_record_subtitle">
+                                    <field name="course_id"/>
+                                </span>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <span>
+                                        Start: <field name="starts_on"/>
+                                    </span>
+
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <span>
+                                        Duration: <field name="duration"/> (hrs)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 
@@ -27,6 +100,7 @@
                         <group>
                             <field name="starts_on"/>
                             <field name="duration"/>
+                            <field name="ends_on"/>
                             <field name="active"/>
                         </group>
                         <group>
@@ -54,6 +128,6 @@
     <record id="action_list_session" model="ir.actions.act_window">
         <field name="name">Sessions</field>
         <field name="res_model">session</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,kanban,calendar,gantt,graph,form</field>
     </record>
 </odoo>
