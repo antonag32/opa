@@ -1,0 +1,316 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* opa
+# Antonio <antonio@vauxoo.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-24 19:50+0000\n"
+"PO-Revision-Date: 2022-03-24 14:10-0600\n"
+"Last-Translator: Antonio <antonio@vauxoo.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: es\n"
+"X-Generator: Gtranslator 41.0\n"
+
+#. module: opa
+#: code:addons/opa/models/course.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copia)"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.session_kanban_view
+msgid "(hrs)"
+msgstr "(h)"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.attendee_wizard_form_view
+msgid "Add attendees"
+msgstr "Añadir asistentes"
+
+#. module: opa
+#: model:ir.actions.act_window,name:opa.attendee_wizard_action
+msgid "Add attendees to sessions"
+msgstr "Añadir asistentes a sesiones"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.attendee_wizard_form_view
+msgid ""
+"All partners in the table will be added as attendees to the selected "
+"sessions."
+msgstr ""
+"Todos los contactos en la table serán añadidos como asistentes para las "
+"sesiones seleccionadas."
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__attendee_count
+msgid "Attendee Count"
+msgstr "Numero de asistentes"
+
+#. module: opa
+#: model:ir.model,name:opa.model_attendee_wizard
+msgid "Attendee Wizard for Open Academy sessions"
+msgstr "Wizard de asistencias para sesiones de Open Academy"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__attendee_ids
+#: model:ir.model.fields,field_description:opa.field_session__attendee_ids
+#: model_terms:ir.ui.view,arch_db:opa.session_form_view
+msgid "Attendees"
+msgstr "Asistentes"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.session_graph_view
+msgid "Attendees by Session"
+msgstr "Asistentes por sesión"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.attendee_wizard_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: opa
+#: model:ir.model,name:opa.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__course_id
+msgid "Course"
+msgstr "Curso"
+
+#. module: opa
+#: model:ir.model.constraint,message:opa.constraint_course_dif_course_title_descript
+msgid "Course titles and description must be different"
+msgstr "El título y la descripción de un curso tienen que ser diferentes"
+
+#. module: opa
+#: model:ir.actions.act_window,name:opa.action_list_course
+#: model:ir.ui.menu,name:opa.menu_courses
+msgid "Courses"
+msgstr "Cursos"
+
+#. module: opa
+#: model:ir.model.constraint,message:opa.constraint_course_unique_course_title
+msgid "Courses must have unique titles"
+msgstr "Los cursos deben tener títulos unicos"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__create_uid
+#: model:ir.model.fields,field_description:opa.field_course__create_uid
+#: model:ir.model.fields,field_description:opa.field_session__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__create_date
+#: model:ir.model.fields,field_description:opa.field_course__create_date
+#: model:ir.model.fields,field_description:opa.field_session__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_course__description
+#: model_terms:ir.ui.view,arch_db:opa.course_form_view
+msgid "Description"
+msgstr "Descripción"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__display_name
+#: model:ir.model.fields,field_description:opa.field_course__display_name
+#: model:ir.model.fields,field_description:opa.field_session__display_name
+msgid "Display Name"
+msgstr "Nombre de muestra"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__duration
+msgid "Duration (hours)"
+msgstr "Duración (horas)"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.session_kanban_view
+msgid "Duration:"
+msgstr "Duración;"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__ends_on
+msgid "Ends On"
+msgstr "Termina el"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.course_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: opa
+#: model:ir.module.category,description:opa.module_opa_category
+msgid "Helps you manage all your courses"
+msgstr "Te ayuda a manejar todos tus cursos"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__id
+#: model:ir.model.fields,field_description:opa.field_course__id
+#: model:ir.model.fields,field_description:opa.field_session__id
+msgid "ID"
+msgstr "ID"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_res_partner__instructor
+#: model:ir.model.fields,field_description:opa.field_res_users__instructor
+#: model:ir.model.fields,field_description:opa.field_session__instructor_id
+msgid "Instructor"
+msgstr "Instructor"
+
+#. module: opa
+#: code:addons/opa/models/session.py:0
+#, python-format
+msgid "Invalid number of seats"
+msgstr "Número de asientos invalido"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard____last_update
+#: model:ir.model.fields,field_description:opa.field_course____last_update
+#: model:ir.model.fields,field_description:opa.field_session____last_update
+msgid "Last Modified on"
+msgstr "Modificado por ultima vez el"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__write_uid
+#: model:ir.model.fields,field_description:opa.field_course__write_uid
+#: model:ir.model.fields,field_description:opa.field_session__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por ultima vez por"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__write_date
+#: model:ir.model.fields,field_description:opa.field_course__write_date
+#: model:ir.model.fields,field_description:opa.field_session__write_date
+msgid "Last Updated on"
+msgstr "Modificado por ultima vez el"
+
+#. module: opa
+#: model:res.partner.category,name:opa.teacher_lvl1_category
+msgid "Level 1"
+msgstr "Nivel 1"
+
+#. module: opa
+#: model:res.partner.category,name:opa.teacher_lvl2_category
+msgid "Level 2"
+msgstr "Nivel 2"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.attendee_wizard_form_view
+msgid "Make sure you have enough seats in your sessions."
+msgstr "Asegurate de tener suficientes asientos en tus sesiones."
+
+#. module: opa
+#: model:res.groups,name:opa.group_manager
+msgid "Manager"
+msgstr "Administrador"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.course_search_view
+msgid "My Courses"
+msgstr "Mis cursos"
+
+#. module: opa
+#: code:addons/opa/models/session.py:0
+#, python-format
+msgid "Negative seats don't exist!"
+msgstr "No puede haber un número negativo de asientos!"
+
+#. module: opa
+#: code:addons/opa/models/session.py:0
+#, python-format
+msgid "Not enough seats!"
+msgstr "No hay suficientes asientos!"
+
+#. module: opa
+#: model:ir.module.category,name:opa.module_opa_category
+#: model:ir.ui.menu,name:opa.menu_main
+msgid "Open Academy"
+msgstr "Open Academy"
+
+#. module: opa
+#: model:ir.model,name:opa.model_course
+msgid "Open Academy course"
+msgstr "Curso de Open Academy"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_course__responsible_id
+#: model_terms:ir.ui.view,arch_db:opa.course_search_view
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__seats
+msgid "Seats"
+msgstr "Asientos"
+
+#. module: opa
+#: model:ir.model,name:opa.model_session
+msgid "Session from an Open Academy course"
+msgstr "Sesion de un curso de Open Academy"
+
+#. module: opa
+#: model:ir.actions.act_window,name:opa.action_list_session
+#: model:ir.model.fields,field_description:opa.field_attendee_wizard__session_ids
+#: model:ir.model.fields,field_description:opa.field_course__session_ids
+#: model:ir.model.fields,field_description:opa.field_res_partner__session_ids
+#: model:ir.model.fields,field_description:opa.field_res_users__session_ids
+#: model:ir.ui.menu,name:opa.menu_sessions
+#: model_terms:ir.ui.view,arch_db:opa.course_form_view
+#: model_terms:ir.ui.view,arch_db:opa.inherit_res_partner_form_view
+#: model_terms:ir.ui.view,arch_db:opa.session_calendar_view
+#: model_terms:ir.ui.view,arch_db:opa.session_gantt_view
+msgid "Sessions"
+msgstr "Sesiones"
+
+#. module: opa
+#: model_terms:ir.ui.view,arch_db:opa.session_kanban_view
+msgid "Start:"
+msgstr "Empieza:"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__starts_on
+msgid "Starts On"
+msgstr "Empieza el"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_session__taken_seats
+msgid "Taken Seats (%)"
+msgstr "Asientos ocupados (%)"
+
+#. module: opa
+#: model:res.partner.category,name:opa.teacher_category
+msgid "Teacher"
+msgstr "Maestro"
+
+#. module: opa
+#: code:addons/opa/models/session.py:0
+#, python-format
+msgid "The instructor can't be an attendee"
+msgstr "El instructor no puede ser un asistente"
+
+#. module: opa
+#: model:ir.model.fields,field_description:opa.field_course__title
+#: model:ir.model.fields,field_description:opa.field_session__title
+msgid "Title"
+msgstr "Título"
+
+#. module: opa
+#: code:addons/opa/models/session.py:0
+#, python-format
+msgid "You can't have more attendees (%d) than seats (%d)."
+msgstr "No puedes tener más asistentes (%d) que asistentes (%d)."
