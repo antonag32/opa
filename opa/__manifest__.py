@@ -18,6 +18,8 @@
         'views/res_partner_views.xml',
         'data/res_partner_category.xml',
         'wizard/attendee_wizard_views.xml',
+        'report/session_reports.xml',
+        'report/session_templates.xml'
     ],
     'demo': ['demo/course_demo.xml'],
     'application': True,
