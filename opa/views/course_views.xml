@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <record id="course_tree_view" model="ir.ui.view">
+        <field name="name">course.tree.view</field>
+        <field name="model">course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="course_search_view" model="ir.ui.view">
+        <field name="name">course.search.view</field>
+        <field name="model">course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="course_form_view" model="ir.ui.view">
+        <field name="name">course.form.view</field>
+        <field name="model">course</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="action_list_course" model="ir.actions.act_window">
         <field name="name">Courses</field>
         <field name="res_model">course</field>
