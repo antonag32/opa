@@ -130,4 +130,49 @@
         <field name="res_model">session</field>
         <field name="view_mode">tree,kanban,calendar,gantt,graph,form</field>
     </record>
+
+    <record id="action_graph_session" model="ir.actions.act_window">
+        <field name="name">Attendees by Course</field>
+        <field name="res_model">session</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="session_graph_view"/>
+    </record>
+
+    <record id="action_calendar_session" model="ir.actions.act_window">
+        <field name="name">Calendar of Sessions</field>
+        <field name="res_model">session</field>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="session_calendar_view"/>
+    </record>
+
+    <record id="action_tree_session" model="ir.actions.act_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">session</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="session_tree_view"/>
+    </record>
+
+    <record id="session_dashboard_view" model="ir.ui.view">
+        <field name="name">session.dashboard.view</field>
+        <field name="model">board.board</field>
+        <field name="arch" type="xml">
+            <form>
+                <board style="1">
+                    <column>
+                        <action name="%(action_graph_session)d"/>
+                        <action name="%(action_calendar_session)d"/>
+                        <action name="%(action_tree_session)d"/>
+                    </column>
+                </board>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_session_dashboard" model="ir.actions.act_window">
+        <field name="name">Session Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="session_dashboard_view"/>
+    </record>
 </odoo>
