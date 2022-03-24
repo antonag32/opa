@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="attendee_wizard_form_view" model="ir.ui.view">
+        <field name="name">attendee.wizard.form.view</field>
+        <field name="model">attendee.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <form>
+                        <sheet>
+                            <p class="mb-0">
+                                All partners in the table will be added as attendees to the selected sessions.
+                            </p>
+                            <p class="text-muted">
+                                Make sure you have enough seats in your sessions.
+                            </p>
+                            <group>
+                                <field name="session_ids"/>
+                                <field name="attendee_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="email"/>
+                                        <field name="phone"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </sheet>
+                        <footer>
+                            <button string="Add attendees" class="btn btn-primary" type="object" name="add_attendees"/>
+                            <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                        </footer>
+                    </form>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="attendee_wizard_action" model="ir.actions.act_window">
+        <field name="name">Add attendees to sessions</field>
+        <field name="res_model">attendee.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="opa.model_session"/>
+    </record>
+</odoo>

@@ -3,3 +3,4 @@ course_read,opa.course.read,model_course,base.group_user,1,0,0,0
 session_read,opa.session.read,model_session,base.group_user,1,0,0,0
 course_all,opa.course.all,model_course,opa.group_manager,1,1,1,1
 session_all,opa.session.all,model_session,opa.group_manager,1,1,1,1
+attendee_wizard_all,opa.attendee.wizard.all,model_attendee_wizard,opa.group_manager,1,1,1,0
