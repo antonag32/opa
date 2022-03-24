@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="session_report" model="ir.actions.report">
+        <field name="name">Session</field>
+        <field name="model">session</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">opa.report_session</field>
+        <field name="report_file">opa.report_session</field>
+        <field name="attachment_use" eval="False"/>
+        <field name="print_report_name">'session-' + str(object.id)</field>
+        <field name="binding_model_id" ref="model_session"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
