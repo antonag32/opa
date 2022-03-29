@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_1_demo" model="res.partner">
+        <field name="name">Super Instructor</field>
+        <field name="email">best.instructor@vauxoo.com</field>
+        <field name="instructor" eval="True"/>
+    </record>
+</odoo>
