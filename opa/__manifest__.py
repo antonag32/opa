@@ -21,7 +21,11 @@
         'report/session_reports.xml',
         'report/session_templates.xml'
     ],
-    'demo': ['demo/course_demo.xml'],
+    'demo': [
+        'demo/res_users.xml',
+        'demo/res_partner.xml',
+        'demo/course_demo.xml'
+    ],
     'application': True,
     'license': 'LGPL-3'
 }
