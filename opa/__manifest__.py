@@ -5,7 +5,7 @@
     'website': 'https://vauxoo.com',
     'category': 'Services',
     'version': '15.0.1.0.0',
-    'depends': ['base', 'web_dashboard'],
+    'depends': ['base', 'board'],
     'data': [
         'security/ir_module_category.xml',
         'security/res_groups.xml',
