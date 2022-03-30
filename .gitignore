@@ -127,9 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# Pre-commit - Vauxoo MQT
-.eslintrc.json
-.flake8
-.pre-commit*
-.pylintrc*
