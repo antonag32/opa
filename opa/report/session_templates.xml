@@ -2,33 +2,33 @@
 <odoo>
     <template id="report_session_document">
         <t t-call="web.external_layout">
-            <t t-set="doc" t-value="doc.with_context(lang=user.lang)"/>
+            <t t-set="doc" t-value="doc.with_context(lang=user.lang)" />
             <div class="page">
-                <div class="oe_structure"/>
+                <div class="oe_structure" />
                 <h1>
                     Session #
-                    <t t-esc="doc.id"/>
+                    <t t-esc="doc.id" />
                 </h1>
                 <h2>
-                    <t t-esc="doc.title"/>
+                    <t t-esc="doc.title" />
                 </h2>
                 <div class="row my-5">
                     <div class="col-auto mx-2">
                         <span>
                             <span>Course: </span>
-                            <t t-esc="doc.course_id.title"/>
+                            <t t-esc="doc.course_id.title" />
                         </span>
                     </div>
                     <div class="col-auto mx-2">
                         <span>
                             <span>Starts on: </span>
-                            <t t-esc="doc.starts_on"/>
+                            <t t-esc="doc.starts_on" />
                         </span>
                     </div>
                     <div class="col-auto mx-2">
                         <span>
                             <span>Ends on: </span>
-                            <t t-esc="doc.ends_on"/>
+                            <t t-esc="doc.ends_on" />
                         </span>
                     </div>
                 </div>
@@ -47,13 +47,13 @@
                                 <t t-foreach="doc.attendee_ids" t-as="att">
                                     <tr>
                                         <td>
-                                            <t t-esc="att.name"/>
+                                            <t t-esc="att.name" />
                                         </td>
                                         <td>
-                                            <t t-esc="att.email"/>
+                                            <t t-esc="att.email" />
                                         </td>
                                         <td>
-                                            <t t-esc="att.phone"/>
+                                            <t t-esc="att.phone" />
                                         </td>
                                     </tr>
                                 </t>
@@ -68,7 +68,7 @@
     <template id="report_session">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="opa.report_session_document" t-lang="user.lang"/>
+                <t t-call="opa.report_session_document" t-lang="user.lang" />
             </t>
         </t>
     </template>

@@ -30,9 +30,7 @@ class OpaRpc:
         return self.object.execute_kw(self.database, self.uid, self.password, *args)
 
     def get_sessions(self):
-        return self._execute(
-            "session", "search_read", [[]], {"fields": ["id", "title", "seats"]}
-        )
+        return self._execute("session", "search_read", [[]], {"fields": ["id", "title", "seats"]})
 
     def get_courses(self):
         return self._execute("course", "search_read", [[]], {"fields": ["id", "title"]})

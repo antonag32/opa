@@ -1,8 +1,9 @@
+from psycopg2.errors import CheckViolation, NotNullViolation, UniqueViolation
+
 from odoo import fields
 from odoo.exceptions import ValidationError
 from odoo.tests import TransactionCase
 from odoo.tools import mute_logger
-from psycopg2.errors import CheckViolation, NotNullViolation, UniqueViolation
 
 
 class TestOpa(TransactionCase):
@@ -15,9 +16,7 @@ class TestOpa(TransactionCase):
 
     def test_session_instructor_not_attendee(self):
         """Validate that a session's instructor can't be in the attendees list."""
-        with self.assertRaisesRegex(
-            ValidationError, "The instructor can't be an attendee"
-        ):
+        with self.assertRaisesRegex(ValidationError, "The instructor can't be an attendee"):
             self.env["session"].create(
                 {
                     "title": "Instructor teaches itself",
@@ -36,12 +35,8 @@ class TestOpa(TransactionCase):
                 "instructor_id": self.session_instructor_id,
             }
         )
-        with self.assertRaisesRegex(
-            ValidationError, "The instructor can't be an attendee"
-        ):
-            test_session.write(
-                {"attendee_ids": [fields.Command.set([self.session_instructor_id])]}
-            )
+        with self.assertRaisesRegex(ValidationError, "The instructor can't be an attendee"):
+            test_session.write({"attendee_ids": [fields.Command.set([self.session_instructor_id])]})
 
         test_session = self.env["session"].create(
             {
@@ -51,17 +46,13 @@ class TestOpa(TransactionCase):
                 "attendee_ids": [fields.Command.set([self.session_instructor_id])],
             }
         )
-        with self.assertRaisesRegex(
-            ValidationError, "The instructor can't be an attendee"
-        ):
+        with self.assertRaisesRegex(ValidationError, "The instructor can't be an attendee"):
             test_session.write({"instructor_id": self.session_instructor_id})
 
     def test_session_required_course(self):
         """Ensure a course is required when creating a session."""
         with mute_logger("odoo.sql_db"):
-            with self.assertRaisesRegex(
-                NotNullViolation, 'null value in column "course_id"'
-            ):
+            with self.assertRaisesRegex(NotNullViolation, 'null value in column "course_id"'):
                 self.env["session"].create(
                     {
                         "title": "Incorrectly creating sessions",
@@ -73,12 +64,8 @@ class TestOpa(TransactionCase):
         """Validate that courses can't have their description be the same as their title."""
         test_string = "This is about to blow up!"
         with mute_logger("odoo.sql_db"):
-            with self.assertRaisesRegex(
-                CheckViolation, "course_dif_course_title_descript"
-            ):
-                self.env["course"].create(
-                    {"title": test_string, "description": test_string}
-                )
+            with self.assertRaisesRegex(CheckViolation, "course_dif_course_title_descript"):
+                self.env["course"].create({"title": test_string, "description": test_string})
 
     def test_course_repeated_title(self):
         """Ensure courses must have unique titles."""

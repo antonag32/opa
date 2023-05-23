@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="course_1_demo" model="course">
         <field name="title">How to program Odoo</field>
@@ -13,6 +13,6 @@
     <record id="course_3_demo" model="course">
         <field name="title">How not to do Unit Tests</field>
         <field name="description">Ft. this repo</field>
-        <field name="responsible_id" ref="opa.res_users_1_demo"/>
+        <field name="responsible_id" ref="opa.res_users_1_demo" />
     </record>
 </odoo>

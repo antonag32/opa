@@ -5,7 +5,7 @@
         <field name="model">course</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="title"/>
+                <field name="title" />
             </tree>
         </field>
     </record>
@@ -15,11 +15,15 @@
         <field name="model">course</field>
         <field name="arch" type="xml">
             <search>
-                <field name="title"/>
-                <field name="description"/>
-                <filter name="my_courses" string="My Courses" domain="[('responsible_id', '=', uid)]"/>
+                <field name="title" />
+                <field name="description" />
+                <filter name="my_courses" string="My Courses" domain="[('responsible_id', '=', uid)]" />
                 <group string="Group By">
-                    <filter name="group_by_responsible" string="Responsible" context="{'group_by': 'responsible_id'}"/>
+                    <filter
+                        name="group_by_responsible"
+                        string="Responsible"
+                        context="{'group_by': 'responsible_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -32,14 +36,14 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="title"/>
+                        <field name="title" />
                     </group>
                     <notebook>
                         <page string="Description">
-                            <field name="description"/>
+                            <field name="description" />
                         </page>
                         <page string="Sessions">
-                            <field name="session_ids"/>
+                            <field name="session_ids" />
                         </page>
                     </notebook>
                 </sheet>

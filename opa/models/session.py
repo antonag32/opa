@@ -41,9 +41,7 @@ class Session(models.Model):
     def _compute_taken_seats(self):
         for record in self:
             if record.seats > 0:
-                record.taken_seats = round(
-                    (100 / record.seats) * len(record.attendee_ids), 2
-                )
+                record.taken_seats = round((100 / record.seats) * len(record.attendee_ids), 2)
             else:
                 record.taken_seats = 0
 
@@ -63,8 +61,9 @@ class Session(models.Model):
             return {
                 "warning": {
                     "title": _("Not enough seats!"),
-                    "message": _("You can't have more attendees (%d) than seats (%d).")
-                    % (len(self.attendee_ids), self.seats),
+                    "message": _(
+                        "You can't have more attendees (%d) than seats (%d).", (len(self.attendee_ids), self.seats)
+                    ),
                 }
             }
 

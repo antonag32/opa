@@ -15,19 +15,24 @@
                                 Make sure you have enough seats in your sessions.
                             </p>
                             <group>
-                                <field name="session_ids"/>
+                                <field name="session_ids" />
                                 <field name="attendee_ids">
                                     <tree>
-                                        <field name="name"/>
-                                        <field name="email"/>
-                                        <field name="phone"/>
+                                        <field name="name" />
+                                        <field name="email" />
+                                        <field name="phone" />
                                     </tree>
                                 </field>
                             </group>
                         </sheet>
                         <footer>
-                            <button string="Add attendees" class="btn btn-primary" type="object" name="add_attendees"/>
-                            <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                            <button
+                                string="Add attendees"
+                                class="btn btn-primary"
+                                type="object"
+                                name="add_attendees"
+                            />
+                            <button string="Cancel" class="btn btn-secondary" special="cancel" />
                         </footer>
                     </form>
                 </sheet>
@@ -40,6 +45,6 @@
         <field name="res_model">attendee.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="binding_model_id" ref="opa.model_session"/>
+        <field name="binding_model_id" ref="opa.model_session" />
     </record>
 </odoo>
